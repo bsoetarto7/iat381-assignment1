@@ -1,0 +1,84 @@
+</script>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="col-xs-4">
+    <img class="small-logo" src="http://fc03.deviantart.net/fs71/f/2013/206/1/9/simple_linux_logo_by_dablim-d5k4ghu.png" width="40">
+
+  </div>
+  <div class="col-xs-8">
+    <h2 class="small-title">Ticket Bird</h2>
+
+  </div>
+</nav>
+
+<div class="container flightinfo-type1">
+  <div class="row">
+    <div class="col-md-6 .col-md-offset-3">
+      <form role="form">
+        <div class="form-group">
+          <input type="text" class="form-control" id="usr" placeholder="Destination">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="usr" placeholder="From">
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<div class="container flightinfo-type2">
+  <div class="row">
+    <div class="col-xs-7">
+      <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Leaving</h3>
+        </div>
+        <div class="panel-body">
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5">
+      <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Time</h3>
+        </div>
+        <div class="panel-body">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-xs-7">
+      <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Returning</h3>
+        </div>
+        <div class="panel-body">
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5">
+      <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Time</h3>
+        </div>
+        <div class="panel-body">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
