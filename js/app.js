@@ -3,6 +3,7 @@ var flightinfoApp = angular.module('flightinfoApp', [
     'flightInfoControllerM',
     'ui.bootstrap'
 ]);
+// ngRoute, ui.bootstrap for native directives for Bootstrap
 
 flightinfoApp.config(['$routeProvider',
     function($routeProvider) {
@@ -12,8 +13,14 @@ flightinfoApp.config(['$routeProvider',
                 controller: 'HCtrl'
             }).
             when('/page2',{
+                // flight form page
                 templateUrl:'flightinfo.html',
                 controller: 'DatepickerDemoCtrl'
+            }).
+            when('/flightDetail',{
+                // each flight detailed display
+                templateUrl:'flightinfodetails.html',
+                controller: 'flightDetailedController'
             }).
             otherwise({
                 redirectTo: '/home'
