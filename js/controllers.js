@@ -25,7 +25,7 @@ flightInfoControllerM.controller('NavCtrl', function ($scope) {
 });
 
 flightInfoControllerM.controller('DatepickerDemoCtrl', function ($scope) {
- $scope.today = function() {
+  $scope.today = function() {
     $scope.dt = new Date();
   };
   $scope.today();
