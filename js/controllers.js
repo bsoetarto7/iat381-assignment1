@@ -13,14 +13,14 @@ flightInfoControllerM.controller('HCtrl', function ($scope) {
 });
 
 
-flightInfoControllerM.controller('FICtrl', function ($scope) {
-  $scope.phones = [
-    {'Destination': 'Nexus S',
-     'snippet': 'Fast just got faster with Nexus S.'},
-    {'From': 'Motorola XOOM™ with Wi-Fi',
-     'snippet': 'The Next, Next Generation tablet.'},
-    {'name': 'MOTOROLA XOOM™',
-     'snippet': 'The Next, Next Generation tablet.'}
+flightInfoControllerM.controller('NavCtrl', function ($scope) {
+  $scope.NavBar = [
+    {'name': 'Home',
+     'LinkName': 'home'},
+    {'name': 'Flight Info',
+     'LinkName': 'page2'},
+    {'name': 'Ticket Info',
+     'LinkName': 'page3'}
   ];
 });
 

@@ -3,10 +3,20 @@
     <img class="small-logo" src="img/logo.png" width="40">
 
   </div>
-  <div class="col-xs-8">
+  <div class="col-xs-4">
     <h2 class="small-title">Ticket Bird</h2>
 
   </div>
+    <div class="col-xs-4">
+      <ul ng-controller="NavCtrl">
+        <li ng-repeat="nav in NavBar">
+          <a href="#{{nav.LinkName}}">{{nav.name}}</a>
+
+        </li>
+
+      </ul>
+
+    </div>
 </nav>
 
 <div class="container flightinfo-type1">
@@ -83,7 +93,7 @@
 
     <div class="row home">
     <button type="button" class="btn btn-default btn-lg">
-      <a class="button-type1" href="#flightDetail">submit</a>
+      <a class="button-type1" href="#page3">submit</a>
     </button>
   </div>
 
