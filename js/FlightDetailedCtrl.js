@@ -1,7 +1,7 @@
 flightinfoApp.controller('flightDetailedController', function ($scope) {
   $scope.flightInfo = [
     {'Flight': 'AC997',
-     'leaving': 910,
+     'leaving': '0'+910,
      'price': 2000,
      'Air_line': 'Air Canada',
      'image': 'AirCanada.png'
@@ -20,9 +20,8 @@ flightinfoApp.controller('flightDetailedController', function ($scope) {
    },
     {'Flight': 'CX838',
      'leaving': 1940,
-     'snippet': 'The Next, Next Generation tablet.',
      'price': 2800,
-     'Air_line': 'Cathay Pacific Airways',
+     'Air_line': 'Cathay Pacific',
      'image': 'CathayPacific.png'
    }
   ];

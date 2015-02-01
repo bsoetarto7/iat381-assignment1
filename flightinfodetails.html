@@ -34,14 +34,23 @@
   
 
 
-        <ul class="phones" class="list-group">
-          <li class="list-group-item" ng-repeat="info in flightInfo | orderBy:orderProp">
-            <span><img class="small-logo" src="img/{{info.image}}"width="80"></span>
-            <span>Flight: {{info.Flight}}</span>
-            <div>Air line: {{info.Air_line}}</div>
-            <span>leaving: {{info.leaving}}</span>
-            <h4>price: {{info.price}}</h4>
-          </li>
+        <ul class="list-group box-of-flight">
+         <div class="row ">
+            <li class="list-group-item box-of-flight" ng-repeat="info in flightInfo | orderBy:orderProp">
+            
+         
+              <div class="col-xs-5"><img class="flight-logo" ng-src="img/{{info.image}}"></div>
+
+              <div class"col-xs-7">
+              <div>Air line: {{info.Air_line}}</div>
+              <div>Flight: {{info.Flight}}</div>
+              
+              <div>leaving: {{info.leaving}}</div>
+              <div><h4>price: {{info.price}}</h4></div>
+              </div>
+           </li>
+           </div>
         </ul>
+      
     
     </div>
