@@ -60,7 +60,7 @@ h3{
 }
 
 .panel-heading.flighinfo{
-	background-color: white;
+	background-color:  ;
 	border-bottom: none;
 }
 
@@ -72,4 +72,30 @@ img.small-logo{
 .selectBar{
 	margin-bottom: 20px;
 	margin-left: 40%; 
+}
+
+
+
+ul{
+	list-style-type: none;
+	padding-top:15px;
+	
+	/*padding-right:5px;*/
+
+
+}
+
+ul.navBar li{
+	display:inline;
+	/*padding-right:3px;*/
+	float:left;
+
+}
+
+.styled-select select{
+	
+	 height: 20px;
+   
+   font-size: 16px;
+  
 }
