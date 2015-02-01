@@ -18,7 +18,7 @@ flightinfoApp.config(['$routeProvider',
             when('/page3',{
                 // each flight detailed display
                 templateUrl:'flightinfodetails.html',
-                controller: 'flightDetailedController'
+                controller: 'FlightDetailedCtrl'
             }).
             otherwise({
                 redirectTo: '/home'
