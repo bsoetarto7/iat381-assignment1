@@ -9,9 +9,9 @@ flightinfoApp.controller('DatepickerCtrl', function ($scope) {
   };
 
   // Disable weekend selection
-  $scope.disabled = function(date, mode) {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-  };
+  // $scope.disabled = function(date, mode) {
+  //   return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  // };
 
   $scope.toggleMin = function() {
     $scope.minDate = $scope.minDate ? null : new Date();
@@ -23,7 +23,6 @@ flightinfoApp.controller('DatepickerCtrl', function ($scope) {
     $event.stopPropagation();
 
     $scope.opened = true;
-    console.log("hello");
   };
   $scope.dateOptions = {
     formatYear: 'yy',
