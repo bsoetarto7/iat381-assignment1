@@ -1,4 +1,4 @@
-flightinfoApp.controller('DatepickerDemoCtrl', function ($scope) {
+flightinfoApp.controller('DatepickerCtrl', function ($scope) {
   $scope.today = function() {
     $scope.dt = new Date();
   };
@@ -23,8 +23,8 @@ flightinfoApp.controller('DatepickerDemoCtrl', function ($scope) {
     $event.stopPropagation();
 
     $scope.opened = true;
+    console.log("hello");
   };
-
   $scope.dateOptions = {
     formatYear: 'yy',
     startingDay: 1
