@@ -12,8 +12,7 @@ flightinfoApp.config(['$routeProvider',
             }).
             when('/page2',{
                 // flight form page
-                templateUrl:'flightinfo.html',
-                controller: 'DatepickerDemoCtrl'
+                templateUrl:'flightinfo.html'
             }).
             when('/page3',{
                 // each flight detailed display

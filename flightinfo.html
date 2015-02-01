@@ -24,11 +24,13 @@
   <div class="row">
     <div class="col-md-6 .col-md-offset-3">
       <form role="form">
-        <div class="form-group">
-          <input type="text" class="form-control" id="usr" placeholder="Destination">
+        <div class="form-group" ng-controller="TypeaheadCtrl">
+          <!-- <input type="text" class="form-control" id="usr" placeholder="Destination"> -->
+          <input placeholder="From" type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="usr" placeholder="From">
+           <input placeholder="Destination" type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
       </form>
     </div>
@@ -38,22 +40,23 @@
 
 <div class="container flightinfo-type2">
   <div class="row">
-    <div class="col-xs-7">
+    <div class="col-xs-12">
       <div class="panel panel-default">
         <div class="panel-heading flighinfo">
           <h3 >Leaving</h3>
         </div>
         <div class="panel-body">
-          <p class="input-group">
+          <p class="input-group" ng-controller="DatepickerCtrl">
             <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
             <span class="input-group-btn">
               <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
             </span>
+
           </p>
         </div>
       </div>
     </div>
-    <div class="col-xs-5">
+<!--     <div class="col-xs-5">
       <div class="panel panel-default">
         <div class="panel-heading flighinfo">
           <h3 >Time</h3>
@@ -61,20 +64,27 @@
         <div class="panel-body">
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
   <div class="row">
-    <div class="col-xs-7">
+    <div class="col-xs-12">
       <div class="panel panel-default">
         <div class="panel-heading flighinfo">
           <h3 >Returning</h3>
         </div>
         <div class="panel-body">
+          <p class="input-group" ng-controller="DatepickerCtrl2">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+
+          </p>
         </div>
       </div>
     </div>
-    <div class="col-xs-5">
+<!--     <div class="col-xs-5">
       <div class="panel panel-default">
         <div class="panel-heading flighinfo">
           <h3 >Time</h3>
@@ -82,15 +92,81 @@
         <div class="panel-body">
         </div>
       </div>
+    </div> -->
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+     <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Class</h3>
+        </div>
+        <div ng-controller="DropdownCtrl">
+          <select ng-model="myClass" ng-options="class.name for class in FlightClass"> </select>
+        </div>
+      </div>
+     </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+     <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Stop</h3>
+        </div>
+        <div ng-controller="DropdownCtrl">
+          <select ng-model="myStop" ng-options="stop.name for stop in FlightStop"> </select>
+        </div>
+      </div>
+     </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Adult</h3>
+        </div>
+          <div ng-controller="DropdownCtrl">
+
+            <!-- Single button -->
+             <select ng-model="myFlexible" ng-options="flexible.name for flexible in Flexible"> </select>
+
+
+          </div>
+        
+
+      </div>
     </div>
 
+    <div class="col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading flighinfo">
+          <h3 >Kid</h3>
+        </div>
+          <div ng-controller="DropdownCtrl">
+
+            <!-- Single button -->
+             <select ng-model="myFlexible" ng-options="flexible.name for flexible in Flexible"> </select>
+
+
+          </div>
+
+        </div>
+
+    </div>
   </div>
 
     <div class="row home">
-    <button type="button" class="btn btn-default btn-lg">
-      <a class="button-type1" href="#page3">submit</a>
-    </button>
-  </div>
+      <button type="button" class="btn btn-default btn-lg">
+        <a class="button-type1" href="#page3">submit</a>
+      </button>
+    </div>
 
 </div>
 
