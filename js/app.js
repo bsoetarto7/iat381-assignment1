@@ -1,7 +1,5 @@
 var flightinfoApp = angular.module('flightinfoApp', [
-    'ngRoute',
-    'ui.bootstrap'
-]);
+    'ngRoute','ui.bootstrap', 'ngTouch']);
 // ngRoute, ui.bootstrap for native directives for Bootstrap
 
 flightinfoApp.config(['$routeProvider',

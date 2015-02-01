@@ -75,24 +75,36 @@ flightinfoApp.controller('FlightDetailedCtrl', function ($scope) {
   $scope.orderProp = 'Air_line';
   $scope.orderProp = 'leaving';
   $scope.orderProp = 'price';
-  $scope.oneAtATime = true;
 
-    $scope.groups = [
-    {
-      title: 'Dynamic Group Header - 1',
-      content: 'Dynamic Group Body - 1'
+  $scope.prices = [
+    { 'name' : 'CAN - Canadian',
+      'value'  : 0
     },
     {
-      title: 'Dynamic Group Header - 2',
-      content: 'Dynamic Group Body - 2'
+      'name' : 'USD - US dollor',
+      'value' : 0
+    },
+    {
+      'name' : 'HKD Hong Kong Dollar',
+      'value' : 0
     }
   ];
 
   $scope.status = {
-    isFirstOpen: true,
-    isFirstDisabled: false
+    isopen: false
   };
+
+  $scope.toggled = function(open) {
+    $log.log('Dropdown is now: ', open);
+  };
+
+  $scope.toggleDropdown = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope.status.isopen = !$scope.status.isopen;
+  };
+
 });
 
-angular.module('ngSwipeRight', ['ngTouch']);
+
 
