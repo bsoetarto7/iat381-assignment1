@@ -1,47 +1,153 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="col-xs-2">
-    <img class="small-logo" src="img/logo.png" width="40">
+ <div class="col-xs-2">
+  <img class="small-logo" src="img/logo.png" width="40">
 
-  </div>
-  <div class="col-xs-5">
-    <h2 class="small-title">Ticket Bird</h2>
+</div>
+<div class="col-xs-5">
+  <h2 class="small-title">Ticket Bird</h2>
 
-  </div>
-    <div class="col-xs-5">
-      <ul ng-controller="NavCtrl">
-        <li ng-repeat="nav in NavBar">
-          <a href="#{{nav.LinkName}}">{{nav.name}}</a>
-
-        </li>
-
-      </ul>
-
-    </div>
+</div>
+<div class="col-xs-5">
+  <ul ng-controller="NavCtrl">
+   <li ng-repeat="nav in NavBar">
+    <a href="#{{nav.LinkName}}">{{nav.name}}</a>
+  </li>
+</ul>
+</div>
 </nav>
 
-<div class='container flightinfo-type1'>
-    <select ng-model="orderProp" class='selectBar'>
-      <li class="list-group-item"> 
-        <option value="Air_line">Air line</option>
-      </li>
-      <li class="list-group-item"> 
-        <option value="leaving">leaving time</option>
-      </li>
-      <li class="list-group-item"> 
-            <option value="price">price</option>
-      </li>
-    </select>
+
+<div ng-app="ngSwipeRight" class='container flightinfo-type1'>
+
+ <div ng-show="!showActions" ng-swipe-left="showActions = true">
+
   
+   <select ng-model="orderProp" class='selectBar'>
+    <li class="list-group-item"> 
+     <option value="Air_line">Air line</option>
+   </li>
+   <li class="list-group-item"> 
+     <option value="leaving">leaving time</option>
+   </li>
+   <li class="list-group-item"> 
+     <option value="price">price</option>
+   </li>
+  </select>
+   <ul class="list-group box-of-flight">
+
+      <div class="row ">
+
+        <li class="list-group-item box-of-flight" ng-repeat="info in flightInfo | orderBy:orderProp | filter: search: strict" >
+
+          <details>
+              <summary>
+               <div class="col-xs-5"><img class="flight-logo" ng-src="img/{{info.image}}">
+               </div>
+
+                <div class"col-xs-7">
+                  <div>Air line: {{info.Air_line}}</div>
+                  <div>Flight: {{info.Flight}}</div>
+
+                  <div>leaving: {{info.leaving}}</div>
+                  <h4>price: {{info.price}}</h4>
+                </div>
+              </summary>
+
+             <p>
+               <p class="col-xs-4"> Depart</p>
+                <div class="col-xs-8"> 
+                 light No : {{info.leavingFlightNo}}
+                </div>
+               <div>
+                 depart location : {{info.departLocationL}}
+               </div>
+               <div class="col-xs-8">
+                 arrivel location : {{info.arriveLocationL}}
+               </div>
+               <div class="col-xs-8">
+                 arrive time: {{info.arrivelTimeL}}
+               </div>
+
+               <p class="col-xs-4">Return</p>
+               <div class="col-xs-8"> 
+                 light No : {{info.returningFlightNo}}
+               </div>
+               <div>
+                 depart location : {{info.departLocationR}}
+               </div>
+               <div class="col-xs-8">
+                 arrivel location : {{info.arriveLocationR}}
+               </div>
+               <div class="col-xs-8">
+                 arrive time: {{info.arrivelTimeR}}
+               </div>
+             </p>
+          </details>
+
+         </li>
+       </div>
+   </ul>
+
+</div>
+
+  <div ng-show="showActions" ng-swipe-right="showActions = false">
 
 
-        <ul class="phones" class="list-group">
-          <li class="list-group-item" ng-repeat="info in flightInfo | orderBy:orderProp">
-            <span><img class="small-logo" src="img/{{info.image}}"width="80"></span>
-            <span>Flight: {{info.Flight}}</span>
-            <div>Air line: {{info.Air_line}}</div>
-            <span>leaving: {{info.leaving}}</span>
-            <h4>price: {{info.price}}</h4>
-          </li>
-        </ul>
-    
-    </div>
+        <accordion close-others=false>
+          <accordion-group >
+             <accordion-heading>
+                 pricing
+              </accordion-heading>
+
+                <!--  dropdown -->
+            <div class="well">
+              <div class="btn-group" dropdown is-open="status.isopen">
+                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle  ng-disabled="disabled">
+                  Currency <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li ng-repeat="price in prices ">
+                    {{price.name}}
+                  </li>
+                </ul>
+              </div>
+
+                  <pre>
+                    $scope.demo1 = {
+                        min: 20,
+                        max: 80
+                    };</pre>
+
+
+              <div class="container" ng-controller="DemoController">
+                <div range-slider min="0" max="100" model-min="demo1.min" model-max="demo1.max"></div>
+              </div>
+
+           </div>
+
+          </accordion-group>
+
+
+          <accordion-group >
+             <accordion-heading>
+                 air line
+              </accordion-heading>
+
+           <label class="checkbox" ng-repeat="info in flightInfo ">
+            <input type="checkbox" checked>
+              {{info.Air_line}}
+          </label>
+          </accordion-group>
+        </accordion>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+

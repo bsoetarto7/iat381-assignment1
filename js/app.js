@@ -1,7 +1,5 @@
 var flightinfoApp = angular.module('flightinfoApp', [
-    'ngRoute',
-    'ui.bootstrap'
-]);
+    'ngRoute','ui.bootstrap', 'ngTouch']);
 // ngRoute, ui.bootstrap for native directives for Bootstrap
 
 flightinfoApp.config(['$routeProvider',
@@ -17,7 +15,7 @@ flightinfoApp.config(['$routeProvider',
             when('/page3',{
                 // each flight detailed display
                 templateUrl:'flightinfodetails.html',
-                controller: 'flightDetailedController'
+                controller: 'FlightDetailedCtrl'
             }).
             otherwise({
                 redirectTo: '/home'
